@@ -40,5 +40,6 @@ int main() {
 ## TEST CASE
 ### Input
 <img width="665" height="152" alt="Image" src="https://github.com/user-attachments/assets/0393dd79-debf-4f8e-9a0a-efd9651cdd9f" />
+
 ### Output
 <img width="201" height="64" alt="Image" src="https://github.com/user-attachments/assets/4e35b3b0-f2eb-4734-b9d9-aef930e166ae" />
