@@ -1,4 +1,4 @@
-### โจทย์ HW01-1
+# โจทย์ HW01-1
 จงเขียนโปรแกรมภาษา C ที่มีโครงสร้างครบถ้วน โดยประกอบไปด้วยการ include และ main function (ชนิดข้อมูล int) เพื่อแสดงข้อความ `"Hello World."` บนหน้าจอ
 
 ## FIX CODE
@@ -13,18 +13,18 @@ int main()
 ```
 
 ## TEST CASE
-# Input
+### Input
 ```bash
 ไม่มี
 ```
-# Output
+### Output
 ```bash
 Hello World
 ```
 
 
 
-### โจทย์ HW01-2
+# โจทย์ HW01-2
 จงแก้ Bug ของโปรแกรมดังต่อไปนี้ เพื่อให้โปรแกรมสามารถรันได้ตามปกติ
 
 ```c++
@@ -49,18 +49,18 @@ int main(){
 ```
 
 ## TEST CASE
-# Input
+### Input
 ```bash
 ไม่มี
 ```
-# Output
+### Output
 ```bash
 Hello, I'm Javis (RMUTL-Version).
 This is my first time to coding with C language.
 Today is my birthday.
 ```
 
-### โจทย์ HW01-3
+# โจทย์ HW01-3
 /*
     เขียนโปรแกรมรับ "ชื่อ" จากผู้ใช้ และแสดงผลบนหน้าจอดังผลลัพธ์ด้านล่างต่อไปนี้ 
     
