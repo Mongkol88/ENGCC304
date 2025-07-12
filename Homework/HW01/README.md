@@ -61,7 +61,6 @@ Today is my birthday.
 ```
 
 # โจทย์ HW01-3
-/*
     เขียนโปรแกรมรับ "ชื่อ" จากผู้ใช้ และแสดงผลบนหน้าจอดังผลลัพธ์ด้านล่างต่อไปนี้ 
     
     Test case:
@@ -75,7 +74,6 @@ Today is my birthday.
         Last Name: DEF
     Output:
         ABD DEFs TC, RMUTL, Chiang Mai, Thailand
-*/
 
 ## คำตอบ 
 ```c
