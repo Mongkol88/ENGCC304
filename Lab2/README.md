@@ -1,2 +1,2 @@
 ### คำตอบ (รูปภาพ)
-<img width="641" height="1972" alt="Image" src="https://github.com/user-attachments/assets/844fd1df-8a55-427c-9c4d-d9b6b12edb01" />
+<img width="1850" height="3531" alt="Image" src="https://github.com/user-attachments/assets/cdf9366b-0733-4583-a5fa-420118055dfb" />
