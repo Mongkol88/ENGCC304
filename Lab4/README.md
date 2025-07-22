@@ -27,11 +27,13 @@ int main()
 ## TEST CASE 1
 ### Input
 <img width="475" height="68" alt="Image" src="https://github.com/user-attachments/assets/551ddf6d-9018-4b43-9831-2f60a7e2d6fd" />
+
 ### Output
 <img width="233" height="65" alt="Image" src="https://github.com/user-attachments/assets/39372f04-60d6-4503-b6bf-34cf885b92f6" />
 
 ## TEST CASE 2
 ### Input
 <img width="494" height="65" alt="Image" src="https://github.com/user-attachments/assets/67bb9a46-aedd-48f2-bb89-fe3c823302ec" />
+
 ### Output
 <img width="257" height="67" alt="Image" src="https://github.com/user-attachments/assets/ea4a58fa-c4c0-4425-a9f1-82dc7093d7ff" />
