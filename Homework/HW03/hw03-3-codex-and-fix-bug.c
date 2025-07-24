@@ -8,7 +8,7 @@ int main() {
     printf("Enter Matrix1 : \n") ;
     printf("Enter number rows and columns : ") ;
     scanf("%d %d", &rows1, &cols1) ; 
-    for ( i = 0 ; i <rows1 ; i++ ) {
+    for ( i = 0 ; i < rows1 ; i++ ) {
         for( j = 0 ; j < cols1 ; j++ ) {
             printf("Enter [%d %d] value : ", i , j );
             scanf("%d", Matrix1[i][j]);
@@ -36,8 +36,8 @@ int main() {
 
     printf("\nMatrix2 : \n");
 
-    for(i=0;i<rows2;i++){
-        for(j=0;j<cols2;j++){
+    for ( i = 0 ; i < rows2 ; i++ ) {
+        for ( j = 0 ; j < cols2 ; j++ ) {
             printf("%d ", &Matrix2[i][j]);
         }
     printf("\n");
@@ -46,7 +46,7 @@ int main() {
     rows3 = cols1;
     cols3 = rows1;
     for ( i = 0 ; i < rows3 ; i++ ) {
-        for(j=0;j<cols3;j++) {
+        for ( j = 0 ; j < cols3 ; j++ ) {
             Matrix3[i][j] = Matrix1[j][i];
         }
     }
@@ -67,14 +67,14 @@ int main() {
         for ( i = 0 ; i < rows4 ; i++ ) {
             for ( j = 0 ; j < cols4 ; j++ ) {
                 Matrix4[i][j] = 0;
-                for(k=0;k<cols1;k++){
+                for ( k = 0 ; k < cols1 ; k++ ) {
                     Matrix4[i][j] += Matrix1[i][k] * Matrix2[k][j];
                 }
             }
         }
         printf("\nMatrix1 x Matrix2 is : \n");
             for ( i = 0 ; i < rows4 ; i++ ) {
-                for(j=0;j<cols4;j++) {
+                for( j = 0 ; j < cols4 ; j++ ) {
                     printf("%d ", &Matrix4[i][j]) ;
                 }
                 printf("\n");
