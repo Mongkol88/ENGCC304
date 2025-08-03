@@ -155,7 +155,7 @@ int main()
     scanf("%s", &login);
 
     if (strcmp(login, "Login") == 0) {
-        printf("Good boy\n");
+        printf("เข้าสู้ระบบสำเร็จ \n");
         int Result = ListItems(), cancel;
         printf("Do you to Cancel Order?\n Type '1' to Continue Type '0' to Cancel : ");
         scanf("%d", &cancel);
