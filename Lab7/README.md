@@ -28,39 +28,37 @@ srand( time( NULL ) ) ;
 int main()
 {
     srand( time( NULL ) );
-    int Plr_Starter_Point = 100, PlayOrExit = 0, score = 100, input = 0, random_Num = rand() % 100 + 1;
+    int Plr_Starter_Point = 100, score = 100, random_Num = rand() % 100 + 1, scope_Min = 1, scope_Max =  100,input = 0, PlayOrExit = 0;
     printf("Do you want to play game (1=play,-1=exit) : ");
-    scanf("%d", &PlayOrExit);
+    scanf(" %d", &PlayOrExit);
     if (PlayOrExit == 1)
     {
-        printf("(Score = %d)\n", score);
+        printf("(Score = %d)\n", score);    
         do
         {
-            while (getchar() != '\n');
-            printf("Guess the winning number (1-100) : \n");
-            int check = scanf("%d", &input);
-            if (input > 100)
+            printf("Guess the winning number (%d-%d) : \n", scope_Min, scope_Max);
+            int check = scanf(" %d", &input);
+            if (input > 100 || input <= 0)
             {
-                printf("ใส่เลข 1-100 อย่างเดียวครับพี่ :) %d\n", input);
+                printf("ใส่เลข 1-100 อย่างเดียวครับพี่ :(\n");
             } else if (check == 0)
             {
                 printf("Input ตัวเลข Only!!!!\n");
-            }
-            if (input == random_Num)
+            } else if (input == random_Num)
             {
-                printf("That is correct! The winning number is %d \n\n", random_Num);        
+                printf("That is correct! The winning number is %d \n\n", random_Num);
                 main();
                 break;
-            } else
+            } else if (input >= random_Num)
             {
                 score -= 10;
-                if (input >= random_Num)
-                {
-                    printf("Sorry, the winning number is LOWER  than %d.  (Score = %d)\n\n", input, score);
-                } else if (input <= random_Num)
-                {
-                    printf("Sorry, the winning number is HIGHER than %d.  (Score = %d)\n\n", input, score);
-                }
+                printf("Sorry, the winning number is LOWER  than %d.  (Score = %d)\n\n", input, score);
+                scope_Max = input - 1;
+            } else if (input <= random_Num)
+            {
+                score -= 10;
+                printf("Sorry, the winning number is HIGHER than %d.  (Score = %d)\n\n", input, score);
+                scope_Min = input + 1;
             }
             if ( score == 0 )
             {
@@ -75,10 +73,9 @@ int main()
         printf("See you again.\n");
     } else
     {
-        while (getchar() != '\n');
         printf("Please enter only 1 or -1. \n");
         printf("Do you want to play game (1=play,-1=exit) : ");
-        scanf("%d", &PlayOrExit);
+        scanf(" %d", &PlayOrExit);
         if (PlayOrExit == 1)
         {
             main();
@@ -87,7 +84,7 @@ int main()
             printf("See you again.\n");
         } else
         {
-            printf("Please enter only 1 or -1.       Retrun to the game agin!\n");
+            printf("Please enter only 1 or -1.\n\nRetrun to the game agin!\n\n");
             main();
         }
     }
@@ -102,45 +99,32 @@ Do you want to play game (1=play,-1=exit) : 1
 (Score = 100)
 Guess the winning number (1-100) :
 50
-Sorry, the winning number is HIGHER than 50.  (Score = 90)
+Sorry, the winning number is LOWER  than 50.  (Score = 90)
 
-Guess the winning number (1-100) :
-56
-Sorry, the winning number is HIGHER than 56.  (Score = 80)
+Guess the winning number (1-49) :
+20 
+Sorry, the winning number is HIGHER than 20.  (Score = 80)
 
-Guess the winning number (1-100) :
-60
-Sorry, the winning number is HIGHER than 60.  (Score = 70)
+Guess the winning number (21-49) :
+30
+Sorry, the winning number is HIGHER than 30.  (Score = 70)
 
-Guess the winning number (1-100) :
-70
-Sorry, the winning number is HIGHER than 70.  (Score = 60)
+Guess the winning number (31-49) :
+40
+Sorry, the winning number is LOWER  than 40.  (Score = 60)
 
-Guess the winning number (1-100) :
-80
-Sorry, the winning number is HIGHER than 80.  (Score = 50)
+Guess the winning number (31-39) :
+35
+Sorry, the winning number is HIGHER than 35.  (Score = 50)
 
-Guess the winning number (1-100) :
-90
-Sorry, the winning number is LOWER  than 90.  (Score = 40)
+Guess the winning number (36-39) :
+37
+Sorry, the winning number is LOWER  than 37.  (Score = 40)
 
-Guess the winning number (1-100) :
-88
-Sorry, the winning number is LOWER  than 88.  (Score = 30)
+Guess the winning number (36-36) :
+36
+That is correct! The winning number is 36 
 
-Guess the winning number (1-100) :
-85
-Sorry, the winning number is LOWER  than 85.  (Score = 20)
-
-Guess the winning number (1-100) :
-82
-Sorry, the winning number is LOWER  than 82.  (Score = 10)
-
-Guess the winning number (1-100) :
-84
-Sorry, the winning number is LOWER  than 84.  (Score = 0)
-
-Game over! Score = 0
 Do you want to play game (1=play,-1=exit) : -1
 See you again.
 ```
@@ -148,14 +132,13 @@ See you again.
 ## TEST CASE
 ### Input & Output
 ```bash
-Do you want to play game (1=play,-1=exit) : tse
+Do you want to play game (1=play,-1=exit) : 2
 Please enter only 1 or -1. 
-Do you want to play game (1=play,-1=exit) : e
+Do you want to play game (1=play,-1=exit) : 2
 Please enter only 1 or -1.
 
 Retrun to the game agin!
 
-Do you want to play game (1=play,-1=exit) : Please enter only 1 or -1.
 Do you want to play game (1=play,-1=exit) : -1
 See you again.
 ```
@@ -166,27 +149,49 @@ See you again.
 Do you want to play game (1=play,-1=exit) : 1
 (Score = 100)
 Guess the winning number (1-100) :
-Test case
-Input ตัวเลข Only!!!!
-Sorry, the winning number is HIGHER than 0.  (Score = 90)
+5
+Sorry, the winning number is HIGHER than 5.  (Score = 90)
 
-Guess the winning number (1-100) :
-101
-ใส่เลข 1-100 อย่างเดียวครับพี่ :) 101
-Sorry, the winning number is LOWER  than 101.  (Score = 80)
+Guess the winning number (6-100) :
+5
+Sorry, the winning number is HIGHER than 5.  (Score = 80)
 
-Guess the winning number (1-100) :
+Guess the winning number (6-100) :
+8
+Sorry, the winning number is HIGHER than 8.  (Score = 70)
+
+Guess the winning number (9-100) :
+5
+Sorry, the winning number is HIGHER than 5.  (Score = 60)
+
+Guess the winning number (6-100) :
+3
+Sorry, the winning number is HIGHER than 3.  (Score = 50)
+
+Guess the winning number (4-100) :
+0
+ใส่เลข 1-100 อย่างเดียวครับพี่ :(
+Guess the winning number (4-100) :
+87
+Sorry, the winning number is LOWER  than 87.  (Score = 40)
+
+Guess the winning number (4-86) :
+69
+Sorry, the winning number is LOWER  than 69.  (Score = 30)
+
+Guess the winning number (4-68) :
 56
-Sorry, the winning number is HIGHER than 56.  (Score = 70)
+Sorry, the winning number is LOWER  than 56.  (Score = 20)
 
-Guess the winning number (1-100) :
-70
-Sorry, the winning number is HIGHER than 70.  (Score = 60)
+Guess the winning number (4-55) :
+35 
+Sorry, the winning number is HIGHER than 35.  (Score = 10)
 
-Guess the winning number (1-100) :
-80
-That is correct! The winning number is 80 
+Guess the winning number (36-55) :
+67
+Sorry, the winning number is LOWER  than 67.  (Score = 0)
 
+Game over! Score = 0
 Do you want to play game (1=play,-1=exit) : -1
 See you again.
 ```
