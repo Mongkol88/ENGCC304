@@ -18,6 +18,9 @@ rand() % 100 + 1
 srand( time( NULL ) ) ;
 ```
 
+## FlowChart(รูป)
+<img width="5519" height="2491" alt="Image" src="https://github.com/user-attachments/assets/f2929a71-7cce-4a43-89fb-18b5a5e520ac" />
+
 ## FIX CODE
 ```c
 #include <stdio.h>
