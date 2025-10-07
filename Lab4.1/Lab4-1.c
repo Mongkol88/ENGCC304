@@ -6,6 +6,6 @@ int main()
     printf("Input Days : ");
     scanf("%d", &Days);
     float cal = Days * 24 * 3600;
-    printf("%.0f", cal);
+    printf("%d Days = %.0f seconds", Days,cal);
     return 0;
 }
