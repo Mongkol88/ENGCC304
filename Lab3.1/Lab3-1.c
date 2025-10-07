@@ -9,6 +9,6 @@ int main()
     printf("W = ");
     scanf("%f", &Base);
     result = (Hights * Base) / 2;
-    printf("%.1f", result);
+    printf("Area = %.1f", result);
     return 0;
 }
