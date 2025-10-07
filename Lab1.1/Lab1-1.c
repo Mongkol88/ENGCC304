@@ -8,6 +8,6 @@ int main()
     int input3 = 0;
     scanf("%d %d %d", &input1, &input2, &input3);
     int result = input1 + input2 + input3;
-    printf("%d", result);
+    printf("Answer = %d", result);
     return 0;
 }
