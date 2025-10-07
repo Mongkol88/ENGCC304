@@ -12,6 +12,7 @@ int main()
     printf("Salary amount/hr: ");
     scanf("%f", &Salary);
     float cal = working_hrs * Salary;
+    printf("----\n");
     printf("Expected Output: \n");
     printf("Employees ID = %s\n", Employees_ID);
     printf("Salary = U$ %0.2f\n", cal);
