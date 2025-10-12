@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <string.h>
+
+
 struct Student {
     int Student;
-    char Name[20] ;
-    char ID[5] ;
+    char Name[50] ;
+    char ID[10] ;
     int ScoreSub[5] ;
 } typedef S ;
 
@@ -19,7 +21,7 @@ void GetGrades(int score) {
     else printf(" XX ");
 }
 
-void showStudentABC(int studentNum,char Name[20],char ID[5],int ScoreSub[5]) {
+void showStudentABC(int studentNum,char Name[10],char ID[5],int ScoreSub[5]) {
     float result = 0;
     printf("\n");
     printf("\nStudent %d:\n", studentNum);
@@ -44,6 +46,7 @@ void showStudentABC(int studentNum,char Name[20],char ID[5],int ScoreSub[5]) {
 
 int main()
 {
+    char temp[50] = "";
     struct Student A;
     struct Student B;
     struct Student C;
@@ -57,7 +60,8 @@ int main()
         {
             A.Student = i;
             printf("\nName: ");
-            scanf("%s", &A.Name);
+            fgets(A.Name, sizeof(A.Name), stdin);
+            A.Name[strcspn(A.Name, "\n")] = '\0';
             printf("ID: ");
             scanf("%s", &A.ID);
             for (int i = 1; i <= 5; i++)
@@ -67,9 +71,11 @@ int main()
             }
         } else if ( i == 2)
         {
+            getchar();
             B.Student = i;
             printf("\nName: ");
-            scanf("%s", &B.Name);
+            fgets(B.Name, sizeof(B.Name), stdin);
+            B.Name[strcspn(B.Name, "\n")] = '\0';
             printf("ID: ");
             scanf("%s", &B.ID);
             for (int i = 1; i <= 5; i++)
@@ -79,9 +85,11 @@ int main()
             }
         } else if ( i == 3)
         {
+            getchar();
             C.Student = i;
             printf("\nName: ");
-            scanf("%s", &C.Name);
+            fgets(C.Name, sizeof(C.Name), stdin);
+            C.Name[strcspn(C.Name, "\n")] = '\0';
             printf("ID: ");
             scanf("%s", &C.ID);
             for (int i = 1; i <= 5; i++)

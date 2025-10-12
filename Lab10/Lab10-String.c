@@ -37,9 +37,6 @@ int main()
     {
         printf("not pass ");
     }
-    
-    
-
 
     return 0;
 }

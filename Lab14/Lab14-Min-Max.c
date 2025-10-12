@@ -1,10 +1,5 @@
 #include <stdio.h>
 
-int MinMax()
-{
-
-}
-
 int main()
 {
     int n = 9;
